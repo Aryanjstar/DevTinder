@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: devtinder-backend
+    runtime: node
+    plan: free
+    rootDir: apps/backend
+    buildCommand: npm install
+    startCommand: node src/app.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: 0.0.0.0
+      - key: JWT_SECRET
+        value: devtinder-jwt-secret-prod-2025
+      - key: CORS_ORIGIN
+        value: https://frontend-1wrynvt18-aryanjstars-projects.vercel.app,https://*.vercel.app
+      - key: DB_CONNECTION_SECRET
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: RAZORPAY_WEBHOOK_SECRET
+        value: Devtinder
+      - key: PAYMENTS_ENABLED
+        value: true
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: WEB_APP_URL
+        value: https://frontend-1wrynvt18-aryanjstars-projects.vercel.app
+      - key: BACKEND_BASE_URL
+        generateValue: true
+
