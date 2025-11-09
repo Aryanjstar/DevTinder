@@ -289,3 +289,6 @@ docs/build/
 # Cookie jar files
 cookiejar
 cookies.txt
+
+# Local Netlify folder
+.netlify

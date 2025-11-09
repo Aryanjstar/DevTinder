@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
-  console.log(process.env.DB_CONNECTION_SECRET);
-  await mongoose.connect(process.env.DB_CONNECTION_SECRET);
+  const mongoUrl = process.env.DB_CONNECTION_SECRET || "mongodb://localhost:27017/devtinder";
+  console.log("Connecting to:", mongoUrl.includes('@') ? 'mongodb://***' : mongoUrl);
+  await mongoose.connect(mongoUrl);
 };
 
 module.exports = connectDB;

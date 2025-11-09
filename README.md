@@ -63,7 +63,6 @@ https://github.com/user-attachments/assets/f741a729-1582-403e-8b6e-d13eb70b76e6
 
 ### 🎨 UI/UX
 - Modern, responsive design with Tailwind CSS
-- Dark/Light theme toggle
 - Mobile-first approach
 - Smooth animations and transitions
 
@@ -285,9 +284,6 @@ npm start
 
 ## 🔧 Configuration
 
-### Theme Configuration
-The app supports light and dark themes using DaisyUI. Theme preference is persisted in localStorage.
-
 ### Rate Limiting
 - Default: 100 requests per 15 minutes
 - Configurable via environment variables
@@ -330,7 +326,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Built with love by developers, for developers
+- Built with love by me, for developers
 - Inspired by the need for better developer networking
 - Thanks to all contributors and the open-source community
 
