@@ -19,7 +19,7 @@ See DevTinder in action!
 
 📽️ Demo Video:  
 
-https://github.com/user-attachments/assets/d84e24d1-8106-4456-a8fe-b8b9fdac8552
+https://github.com/user-attachments/assets/f741a729-1582-403e-8b6e-d13eb70b76e6
 
 <p align="center">
   ▶️ Prefer YouTube? <a href="https://youtu.be/t_e-CtLxn_Q">Watch it here</a>
