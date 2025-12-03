@@ -4,7 +4,7 @@ WORKDIR /home/site/wwwroot
 
 COPY package.json package-lock.json* ./
 
-RUN npm ci --omit=dev || npm i --only=production
+RUN npm install --only=production
 
 COPY src ./src
 

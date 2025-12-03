@@ -140,8 +140,9 @@ router.get(
 				return res.redirect(WEB_APP_URL + "/");
 			}
 
-			// Redirect to the appropriate page
-			return res.redirect(WEB_APP_URL + returnTo);
+			// In production, pass token in URL since domains are different
+			// Frontend will store it in localStorage and make authenticated requests
+			return res.redirect(WEB_APP_URL + `/login?oauth=success&token=${token}`);
 		} catch (e) {
 			console.error("OAuth callback error:", e);
 			return res.redirect(WEB_APP_URL + "/login?error=oauth_failed");

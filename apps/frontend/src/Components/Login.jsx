@@ -16,13 +16,30 @@ const Login = () => {
 	const navigate = useNavigate();
 	const [searchParams] = useSearchParams();
 
-	// Check for OAuth errors on component mount
+	// Check for OAuth success or errors on component mount
 	useEffect(() => {
 		const errorParam = searchParams.get("error");
+		const oauthParam = searchParams.get("oauth");
+		const tokenParam = searchParams.get("token");
+		
 		if (errorParam === "oauth_failed") {
 			setError("OAuth authentication failed. Please try again.");
+		} else if (oauthParam === "success" && tokenParam) {
+			// OAuth successful - set the token as a cookie and fetch user profile
+			document.cookie = `token=${tokenParam}; path=/; max-age=28800; secure; samesite=strict`;
+			
+			// Fetch user profile to populate Redux store
+			axios.get(BASE_URL + "/profile/view", { withCredentials: true })
+				.then((res) => {
+					dispatch(addUser(res.data));
+					navigate("/feed");
+				})
+				.catch((err) => {
+					console.error("Failed to fetch user profile:", err);
+					setError("Authentication succeeded but failed to load profile. Please try logging in again.");
+				});
 		}
-	}, [searchParams]);
+	}, [searchParams, dispatch, navigate]);
 
 	const handleLogin = async () => {
 		try {
