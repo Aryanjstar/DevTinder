@@ -91,33 +91,19 @@ userRouter.get("/feed", userAuth, async (req, res) => {
 			hideUsersFromFeed.add(req.toUserId.toString());
 		});
 
-		// LGBTQ+ inclusive: Show all users regardless of gender for better connections
-		// This supports diverse networking, collaboration, and inclusive community building
-		const users = await User.find({
-			$and: [
-				{ _id: { $nin: Array.from(hideUsersFromFeed) } },
-				{ _id: { $ne: loggedInUser._id } },
-			],
-		})
-			.select(USER_SAFE_DATA + " isSeed createdAt")
-			.sort({
-				isSeed: 1, // Real users first, then seed users
-				createdAt: -1, // Within each group, newest first (Google/email signups at top)
-			})
-			.skip(skip)
-			.limit(limit);
+	// LGBTQ+ inclusive: Show all users regardless of gender for better connections
+	// This supports diverse networking, collaboration, and inclusive community building
+	const users = await User.find({
+		$and: [
+			{ _id: { $nin: Array.from(hideUsersFromFeed) } },
+			{ _id: { $ne: loggedInUser._id } },
+		],
+	})
+		.select(USER_SAFE_DATA)
+		.skip(skip)
+		.limit(limit);
 
-		// Debug logging
-		console.log("Feed users order:");
-		users.slice(0, 5).forEach((user, index) => {
-			console.log(
-				`${index + 1}. ${user.firstName} ${user.lastName} - isSeed: ${
-					user.isSeed
-				}, created: ${user.createdAt}`
-			);
-		});
-
-		res.json({ data: users });
+	res.json({ data: users });
 	} catch (err) {
 		res.status(400).json({ message: err.message });
 	}
