@@ -6,6 +6,7 @@ import { removeUser } from "../utils/userSlice";
 import { removeFeed } from "../utils/feedSlice";
 import Avatar from "./Avatar";
 import ChatList from "./ChatList";
+import ThemeToggle from "./ThemeToggle"; // ⬅️ NEW
 
 const Navbar = () => {
 	const user = useSelector((store) => store.user);
@@ -68,6 +69,9 @@ const Navbar = () => {
 				<div className="navbar-end">
 					{user ? (
 						<div className="flex items-center gap-3">
+							{/* Theme Toggle */}
+							<ThemeToggle />
+
 							{/* Chat List */}
 							<ChatList />
 
