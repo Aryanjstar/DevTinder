@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { applyTheme, getInitialTheme } from "../utils/theme";
 
-const THEME_KEY = "devtinder-theme";
-
 const ThemeToggle = () => {
 	const [theme, setTheme] = useState("light");
 
