@@ -168,59 +168,56 @@ const Landing = () => {
 				</div>
 			</section>
 
-			<section id="coffee" className="rounded-2xl bg-base-200 p-0 mt-10">
-				<div className="relative overflow-hidden rounded-2xl">
-					<div className="absolute -inset-6 blur-2xl opacity-20 bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500" />
-					<div className="relative p-4 sm:p-6 lg:p-8 flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
-						<div className="flex-1 text-center lg:text-left">
-							<h3 className="text-2xl sm:text-3xl font-bold">
-								Buy me a coffee
-							</h3>
-							<p className="opacity-80 mt-2 text-sm lg:text-base">
-								Support the project and future features.
-							</p>
-						</div>
-						<div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center w-full lg:w-auto">
-							<button
-								onClick={handleCoffeePayment}
-								className="btn btn-primary btn-md sm:btn-lg w-full sm:w-auto"
+			<section id="coffee" className="rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 dark:from-primary/20 dark:via-secondary/10 dark:to-accent/15 border border-base-300 p-6 sm:p-8 mt-10">
+				<div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
+					<div className="flex-1 text-center lg:text-left">
+						<h3 className="text-2xl sm:text-3xl font-bold">
+							Buy me a coffee
+						</h3>
+						<p className="opacity-80 mt-2 text-sm lg:text-base">
+							Support the project and future features.
+						</p>
+					</div>
+					<div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center w-full lg:w-auto">
+						<button
+							onClick={handleCoffeePayment}
+							className="btn btn-primary btn-md sm:btn-lg w-full sm:w-auto"
+						>
+							Buy me a coffee ☕
+						</button>
+						<div className="flex flex-wrap gap-2 sm:gap-3 justify-center mt-2 sm:mt-0">
+							<a
+								className="btn btn-xs sm:btn-sm btn-outline"
+								href="https://aryanjaiswal.in"
+								target="_blank"
+								rel="noreferrer"
 							>
-								Buy me a coffee ☕
-							</button>
-							<div className="flex flex-wrap gap-2 sm:gap-3 justify-center mt-2 sm:mt-0">
-								<a
-									className="btn btn-xs sm:btn-sm btn-outline"
-									href="https://aryanjaiswal.me"
-									target="_blank"
-									rel="noreferrer"
-								>
-									Portfolio
-								</a>
-								<a
-									className="btn btn-xs sm:btn-sm btn-outline"
-									href="https://linkedin.com/in/aryanjstar"
-									target="_blank"
-									rel="noreferrer"
-								>
-									LinkedIn
-								</a>
-								<a
-									className="btn btn-xs sm:btn-sm btn-outline"
-									href="https://github.com/aryanjstar"
-									target="_blank"
-									rel="noreferrer"
-								>
-									GitHub
-								</a>
-								<a
-									className="btn btn-xs sm:btn-sm btn-outline"
-									href="https://x.com/aryanjstar"
-									target="_blank"
-									rel="noreferrer"
-								>
-									Twitter
-								</a>
-							</div>
+								Portfolio
+							</a>
+							<a
+								className="btn btn-xs sm:btn-sm btn-outline"
+								href="https://linkedin.com/in/aryanjstar"
+								target="_blank"
+								rel="noreferrer"
+							>
+								LinkedIn
+							</a>
+							<a
+								className="btn btn-xs sm:btn-sm btn-outline"
+								href="https://github.com/aryanjstar"
+								target="_blank"
+								rel="noreferrer"
+							>
+								GitHub
+							</a>
+							<a
+								className="btn btn-xs sm:btn-sm btn-outline"
+								href="https://x.com/aryanjstar"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Twitter
+							</a>
 						</div>
 					</div>
 				</div>
