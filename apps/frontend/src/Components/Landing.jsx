@@ -79,7 +79,7 @@ const Landing = () => {
 	};
 	return (
 		<div className="space-y-12">
-			<section className="hero min-h-[60vh] rounded-2xl bg-mesh-gradient">
+			<section className="hero min-h-[60vh] rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 dark:from-primary/20 dark:via-secondary/10 dark:to-accent/15 border border-base-300">
 				<div className="hero-content flex-col lg:flex-row-reverse gap-8">
 					<div className="relative max-w-md w-full">
 						<div className="absolute -inset-2 rounded-3xl blur-2xl opacity-40 bg-gradient-to-tr from-primary via-secondary to-accent"></div>

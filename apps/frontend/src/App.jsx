@@ -9,8 +9,16 @@ import Connections from "./Components/Connections";
 import Requests from "./Components/Requests";
 import Sent from "./Components/Sent";
 import Landing from "./Components/Landing";
+import { useEffect } from "react";
+import { applyTheme, getInitialTheme } from "./utils/theme";
 
 function App() {
+	// Initialize theme on app load to prevent flash
+	useEffect(() => {
+		const theme = getInitialTheme();
+		applyTheme(theme);
+	}, []);
+
 	return (
 		<>
 			<Provider store={appStore}>

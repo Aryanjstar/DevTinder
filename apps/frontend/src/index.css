@@ -187,12 +187,25 @@ html {
 	}
 }
 
-/* Navbar enhancements */
+/* Navbar enhancements - theme aware */
 .navbar {
 	backdrop-filter: blur(16px);
-	background: rgba(15, 23, 42, 0.8); /* Dark blue/violet background */
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark theme navbar */
+[data-theme="dark"] .navbar {
+	background: rgba(14, 22, 40, 0.85);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Light theme navbar */
+[data-theme="light"] .navbar {
+	background: rgba(255, 255, 255, 0.9);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 /* Toast animations */

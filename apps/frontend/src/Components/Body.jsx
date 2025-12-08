@@ -35,7 +35,7 @@ const Body = () => {
 		if (!user) fetchUser();
 	}, [location.pathname, user]);
 	return (
-		<div>
+		<div className="min-h-screen bg-base-100 text-base-content transition-colors duration-300">
 			<Navbar />
 			<div className="pt-20 max-w-screen-2xl mx-auto px-6">
 				<Outlet />

@@ -25,7 +25,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="fixed top-0 left-0 w-full bg-base-100/20 backdrop-blur-xl border-b border-white/10 z-50 shadow-2xl">
+		<div className="fixed top-0 left-0 w-full z-50">
 			<div className="navbar w-full px-6">
 				{/* Logo */}
 				<div className="navbar-start">
@@ -123,10 +123,12 @@ const Navbar = () => {
 							</div>
 						</div>
 					) : (
-						<div className="flex items-center gap-2">
+						<div className="flex items-center gap-3">
+							{/* Theme Toggle - always visible */}
+							<ThemeToggle />
 							<Link
 								to="/login"
-								className="btn btn-sm px-6 py-2 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-gradient-to-r from-blue-700 via-indigo-800 to-violet-800 hover:from-blue-800 hover:via-indigo-900 hover:to-violet-900 border-0 text-white"
+								className="btn btn-primary btn-sm px-6 py-2 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
 							>
 								Login
 							</Link>
